@@ -16,18 +16,18 @@ class SettingsOneScreen extends StatelessWidget {
                 padding: getPadding(left: 20, top: 17, right: 20, bottom: 17),
                 decoration: AppDecoration.fill5,
                 child: CustomElevatedButton(
-                    width: double.maxFinite,
-                    height: getVerticalSize(44),
-                    text: "Search settings",
-                    margin: getMargin(bottom: 5),
-                    leftIcon: Container(
-                        margin: getMargin(right: 8),
-                        decoration:
-                            BoxDecoration(color: theme.colorScheme.primary),
-                        child:
-                            CustomImageView(svgPath: ImageConstant.imgSearch)),
-                    buttonStyle: CustomButtonStyles.outlineGray5044,
-                    buttonTextStyle: CustomTextStyles.titleSmallPrimary)),
+                  width: double.maxFinite,
+                  height: getVerticalSize(44),
+                  text: "Search settings",
+                  margin: getMargin(bottom: 5),
+                  leftIcon: Container(
+                      margin: getMargin(right: 8),
+                      decoration:
+                          BoxDecoration(color: theme.colorScheme.primary),
+                      child: CustomImageView(svgPath: ImageConstant.imgSearch)),
+                  buttonStyle: CustomButtonStyles.outlineGray5044,
+                  buttonTextStyle: CustomTextStyles.titleSmallPrimary,
+                )),
             bottomNavigationBar: Container(
                 margin: getMargin(left: 169, right: 154, bottom: 1),
                 decoration: AppDecoration.fill8,

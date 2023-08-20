@@ -1,19 +1,37 @@
 import 'package:agrical_ii/core/app_export.dart';
+import 'package:agrical_ii/functions/signup_functions.dart';
 import 'package:agrical_ii/widgets/custom_elevated_button.dart';
 import 'package:agrical_ii/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
 // ignore_for_file: must_be_immutable
-class SignupScreen extends StatelessWidget {
-  SignupScreen({Key? key}) : super(key: key);
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({Key? key}) : super(key: key);
 
-  TextEditingController fullnameController = TextEditingController();
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  TextEditingController fullNameController = TextEditingController();
 
   TextEditingController emailController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
 
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController confirmPasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    confirmPasswordController.dispose();
+    passwordController.dispose();
+    emailController.dispose();
+    fullNameController.dispose();
+    super.dispose();
+  }
+
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +88,7 @@ class SignupScreen extends StatelessWidget {
                                           CustomTextStyles.bodySmallBlack900)),
                               CustomTextFormField(
                                   width: getHorizontalSize(220),
-                                  controller: fullnameController,
+                                  controller: fullNameController,
                                   margin: getMargin(top: 33),
                                   contentPadding: getPadding(
                                       left: 12, top: 10, right: 12, bottom: 10),
@@ -106,25 +124,64 @@ class SignupScreen extends StatelessWidget {
                                   obscureText: true,
                                   filled: true,
                                   fillColor: appTheme.gray500),
-                              CustomElevatedButton(
-                                  width: getHorizontalSize(222),
-                                  height: getVerticalSize(32),
-                                  text: "Confirm your password",
+                              CustomTextFormField(
+                                  width: getHorizontalSize(223),
+                                  controller: confirmPasswordController,
                                   margin: getMargin(top: 14),
-                                  buttonStyle: CustomButtonStyles.fillGray500,
-                                  buttonTextStyle: theme.textTheme.bodyMedium!),
+                                  contentPadding: getPadding(
+                                      left: 12, top: 9, right: 12, bottom: 9),
+                                  textStyle: theme.textTheme.bodyMedium!,
+                                  hintText: "Confirm your password",
+                                  hintStyle: theme.textTheme.bodyMedium!,
+                                  textInputType: TextInputType.visiblePassword,
+                                  obscureText: true,
+                                  filled: true,
+                                  fillColor: appTheme.gray500),
                               CustomElevatedButton(
-                                  width: getHorizontalSize(208),
-                                  height: getVerticalSize(37),
-                                  text: "Sign Up",
-                                  margin: getMargin(top: 29),
-                                  buttonStyle:
-                                      CustomButtonStyles.fillIndigo300TL2,
-                                  buttonTextStyle: CustomTextStyles
-                                      .titleSmallInterBluegray50,
-                                  onTap: () {
-                                    onTapSignup(context);
-                                  }),
+                                width: getHorizontalSize(208),
+                                height: getVerticalSize(37),
+                                text: "Sign Up",
+                                margin: getMargin(top: 29),
+                                buttonStyle:
+                                    CustomButtonStyles.fillIndigo300TL2,
+                                buttonTextStyle:
+                                    CustomTextStyles.titleSmallInterBluegray50,
+                                onTap: () {
+                                  if (areAllFieldsFilled(
+                                      emailController,
+                                      passwordController,
+                                      fullNameController,
+                                      confirmPasswordController)) {
+                                    signUp(
+                                        context,
+                                        emailController,
+                                        passwordController,
+                                        fullNameController,
+                                        confirmPasswordController);
+                                  } else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                        behavior: SnackBarBehavior.floating,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(5)),
+                                        ),
+                                        content: SizedBox(
+                                          height: 20,
+                                          child: Center(
+                                            child: Text(
+                                              'Fill all fields to continue. ',
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                        ),
+                                        duration: Duration(seconds: 5),
+                                        margin: EdgeInsets.all(16),
+                                      ),
+                                    );
+                                  }
+                                },
+                              ),
                               Align(
                                   alignment: Alignment.centerRight,
                                   child: GestureDetector(

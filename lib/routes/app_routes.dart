@@ -1,3 +1,4 @@
+import 'package:agrical_ii/auth.dart';
 import 'package:agrical_ii/presentation/app_navigation_screen/app_navigation_screen.dart';
 import 'package:agrical_ii/presentation/capture_screen/capture_screen.dart';
 import 'package:agrical_ii/presentation/dashboard_monitoring_container_screen/dashboard_monitoring_container_screen.dart';
@@ -18,6 +19,8 @@ import 'package:flutter/material.dart';
 
 class AppRoutes {
   static const String captureScreen = '/capture_screen';
+
+  static const String authScreen = '/auth_screen';
 
   static const String cameraView = '/camera_view';
 
@@ -63,23 +66,24 @@ class AppRoutes {
   static const String appNavigationScreen = '/app_navigation_screen';
 
   static Map<String, WidgetBuilder> routes = {
-    captureScreen: (context) => CaptureScreen(),
+    authScreen: (context) => const AuthPage(),
+    captureScreen: (context) => const CaptureScreen(),
     // splashScreen: (context) => SplashScreen(),
-    welcomeScreen: (context) => WelcomeScreen(),
+    welcomeScreen: (context) => const WelcomeScreen(),
     loginScreen: (context) => LoginScreen(),
-    signupScreen: (context) => SignupScreen(),
-    hScreen: (context) => HScreen(),
-    oScreen: (context) => OScreen(),
-    mScreen: (context) => MScreen(),
-    settingsScreen: (context) => SettingsScreen(),
-    recaptureSaveScreen: (context) => RecaptureSaveScreen(),
-    predictionScreen: (context) => PredictionScreen(),
-    predictFruitsScreen: (context) => PredictFruitsScreen(),
-    predictRipeScreen: (context) => PredictRipeScreen(),
-    predictSpoilScreen: (context) => PredictSpoilScreen(),
-    settingsOneScreen: (context) => SettingsOneScreen(),
+    signupScreen: (context) => const SignupScreen(),
+    hScreen: (context) => const HScreen(),
+    oScreen: (context) => const OScreen(),
+    mScreen: (context) => const MScreen(),
+    settingsScreen: (context) => const SettingsScreen(),
+    recaptureSaveScreen: (context) => const RecaptureSaveScreen(),
+    predictionScreen: (context) => const PredictionScreen(),
+    predictFruitsScreen: (context) => const PredictFruitsScreen(),
+    predictRipeScreen: (context) => const PredictRipeScreen(),
+    predictSpoilScreen: (context) => const PredictSpoilScreen(),
+    settingsOneScreen: (context) => const SettingsOneScreen(),
     dashboardMonitoringContainerScreen: (context) =>
         DashboardMonitoringContainerScreen(),
-    appNavigationScreen: (context) => AppNavigationScreen()
+    appNavigationScreen: (context) => const AppNavigationScreen()
   };
 }

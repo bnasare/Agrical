@@ -96,29 +96,31 @@ class PredictSpoilScreen extends StatelessWidget {
                                             MainAxisAlignment.start,
                                         children: [
                                           CustomElevatedButton(
-                                              width: getHorizontalSize(124),
-                                              height: getVerticalSize(23),
-                                              text: "Number of fruits",
-                                              buttonStyle: CustomButtonStyles
-                                                  .fillBluegray200,
-                                              buttonTextStyle:
-                                                  theme.textTheme.labelLarge!,
-                                              onTap: () {
-                                                onTapNumberof(context);
-                                              },
-                                              alignment: Alignment.centerRight),
+                                            width: getHorizontalSize(124),
+                                            height: getVerticalSize(23),
+                                            text: "Number of fruits",
+                                            buttonStyle: CustomButtonStyles
+                                                .fillBluegray200,
+                                            buttonTextStyle:
+                                                theme.textTheme.labelLarge!,
+                                            alignment: Alignment.centerRight,
+                                            onTap: () {
+                                              onTapNumberof(context);
+                                            },
+                                          ),
                                           CustomElevatedButton(
-                                              width: getHorizontalSize(114),
-                                              height: getVerticalSize(23),
-                                              text: "Ripening Time",
-                                              margin: getMargin(top: 24),
-                                              buttonStyle: CustomButtonStyles
-                                                  .fillPrimaryContainer,
-                                              buttonTextStyle:
-                                                  theme.textTheme.labelLarge!,
-                                              onTap: () {
-                                                onTapRipeningtime(context);
-                                              })
+                                            width: getHorizontalSize(114),
+                                            height: getVerticalSize(23),
+                                            text: "Ripening Time",
+                                            margin: getMargin(top: 24),
+                                            buttonStyle: CustomButtonStyles
+                                                .fillPrimaryContainer,
+                                            buttonTextStyle:
+                                                theme.textTheme.labelLarge!,
+                                            onTap: () {
+                                              onTapRipeningtime(context);
+                                            },
+                                          )
                                         ]))),
                             Align(
                                 alignment: Alignment.bottomLeft,

@@ -84,13 +84,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       buttonStyle: CustomButtonStyles.fillIndigo300,
                       buttonTextStyle:
                           CustomTextStyles.titleSmallInterBluegray50,
-                      onTap: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => Si()));
-                      },
-                    ),
+                    )
                   ],
                 ),
               ],

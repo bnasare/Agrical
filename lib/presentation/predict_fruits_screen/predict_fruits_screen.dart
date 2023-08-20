@@ -104,18 +104,18 @@ class PredictFruitsScreen extends StatelessWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               CustomElevatedButton(
-                                                  width: getHorizontalSize(114),
-                                                  height: getVerticalSize(23),
-                                                  text: "Ripening Time",
-                                                  margin: getMargin(top: 19),
-                                                  buttonStyle:
-                                                      CustomButtonStyles
-                                                          .fillPrimaryContainer,
-                                                  buttonTextStyle: theme
-                                                      .textTheme.labelLarge!,
-                                                  onTap: () {
-                                                    onTapRipeningtime(context);
-                                                  }),
+                                                width: getHorizontalSize(114),
+                                                height: getVerticalSize(23),
+                                                text: "Ripening Time",
+                                                margin: getMargin(top: 19),
+                                                buttonStyle: CustomButtonStyles
+                                                    .fillPrimaryContainer,
+                                                buttonTextStyle:
+                                                    theme.textTheme.labelLarge!,
+                                                onTap: () {
+                                                  onTapRipeningtime(context);
+                                                },
+                                              ),
                                               CustomImageView(
                                                   svgPath: ImageConstant
                                                       .imgMenuOnerrorcontainer,
@@ -128,16 +128,17 @@ class PredictFruitsScreen extends StatelessWidget {
                                             ]))
                                   ]))),
                       CustomElevatedButton(
-                          width: getHorizontalSize(117),
-                          height: getVerticalSize(23),
-                          text: "Spoil Time",
-                          margin: getMargin(bottom: 199),
-                          buttonStyle: CustomButtonStyles.fillOnError,
-                          buttonTextStyle: CustomTextStyles.labelLargeRed100,
-                          onTap: () {
-                            onTapSpoiltime(context);
-                          },
-                          alignment: Alignment.bottomLeft),
+                        width: getHorizontalSize(117),
+                        height: getVerticalSize(23),
+                        text: "Spoil Time",
+                        margin: getMargin(bottom: 199),
+                        buttonStyle: CustomButtonStyles.fillOnError,
+                        buttonTextStyle: CustomTextStyles.labelLargeRed100,
+                        alignment: Alignment.bottomLeft,
+                        onTap: () {
+                          onTapSpoiltime(context);
+                        },
+                      ),
                       CustomImageView(
                           svgPath: ImageConstant.imgGroup61,
                           height: getVerticalSize(322),

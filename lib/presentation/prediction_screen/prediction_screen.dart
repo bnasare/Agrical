@@ -91,18 +91,19 @@ class PredictionScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     CustomElevatedButton(
-                                        width: getHorizontalSize(124),
-                                        height: getVerticalSize(23),
-                                        text: "Number of fruits",
-                                        margin: getMargin(top: 153),
-                                        buttonStyle:
-                                            CustomButtonStyles.fillBluegray200,
-                                        buttonTextStyle:
-                                            theme.textTheme.labelLarge!,
-                                        onTap: () {
-                                          onTapNumberof(context);
-                                        },
-                                        alignment: Alignment.centerRight),
+                                      width: getHorizontalSize(124),
+                                      height: getVerticalSize(23),
+                                      text: "Number of fruits",
+                                      margin: getMargin(top: 153),
+                                      buttonStyle:
+                                          CustomButtonStyles.fillBluegray200,
+                                      buttonTextStyle:
+                                          theme.textTheme.labelLarge!,
+                                      onTap: () {
+                                        onTapNumberof(context);
+                                      },
+                                      alignment: Alignment.centerRight,
+                                    ),
                                     Container(
                                         width: getHorizontalSize(114),
                                         margin: getMargin(left: 2, top: 24),

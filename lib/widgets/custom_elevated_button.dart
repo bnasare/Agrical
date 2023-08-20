@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends BaseButton {
   CustomElevatedButton({
-    Key? key,
+    super.key,
     this.decoration,
     this.leftIcon,
     this.rightIcon,
@@ -52,13 +52,13 @@ class CustomElevatedButton extends BaseButton {
   ButtonStyle? get elevatedButtonStyle =>
       (isDisabled ?? false) ? disabledButtonStyle : buttonStyle;
   Widget get buildElevatedButtonWidget => Container(
-        height: this.height,
+        height: height,
         margin: margin,
-        width: this.width,
+        width: width,
         decoration: decoration,
         child: ElevatedButton(
           style: elevatedButtonStyle!.copyWith(
-            visualDensity: VisualDensity(horizontal: -4, vertical: -4),
+            visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
             padding: MaterialStateProperty.all(EdgeInsets.zero),
           ),
           onPressed: onTap ?? () {},

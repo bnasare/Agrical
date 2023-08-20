@@ -2,7 +2,7 @@ import 'package:agrical_ii/core/app_export.dart';
 import 'package:flutter/material.dart';
 
 class CustomIconButton extends StatelessWidget {
-  CustomIconButton({
+  const CustomIconButton({
     Key? key,
     this.alignment,
     this.margin,
@@ -45,12 +45,12 @@ class CustomIconButton extends StatelessWidget {
   Widget get iconButtonWidget => Padding(
         padding: margin ?? EdgeInsets.zero,
         child: IconButton(
-          visualDensity: VisualDensity(
+          visualDensity: const VisualDensity(
             vertical: -4,
             horizontal: -4,
           ),
           iconSize: getSize(height ?? 0),
-          padding: EdgeInsets.all(0),
+          padding: const EdgeInsets.all(0),
           icon: Container(
             alignment: Alignment.center,
             width: getSize(width ?? 0),
@@ -73,7 +73,7 @@ class CustomIconButton extends StatelessWidget {
                       blurRadius: getHorizontalSize(
                         2.00,
                       ),
-                      offset: Offset(
+                      offset: const Offset(
                         3,
                         2,
                       ),
@@ -105,7 +105,7 @@ extension IconButtonStyleHelper on CustomIconButton {
             blurRadius: getHorizontalSize(
               2.00,
             ),
-            offset: Offset(
+            offset: const Offset(
               3,
               2,
             ),
@@ -128,7 +128,7 @@ extension IconButtonStyleHelper on CustomIconButton {
             blurRadius: getHorizontalSize(
               2.00,
             ),
-            offset: Offset(
+            offset: const Offset(
               3,
               2,
             ),
@@ -151,7 +151,7 @@ extension IconButtonStyleHelper on CustomIconButton {
             blurRadius: getHorizontalSize(
               2.00,
             ),
-            offset: Offset(
+            offset: const Offset(
               3,
               2,
             ),
@@ -174,7 +174,7 @@ extension IconButtonStyleHelper on CustomIconButton {
             blurRadius: getHorizontalSize(
               2.00,
             ),
-            offset: Offset(
+            offset: const Offset(
               3,
               2,
             ),

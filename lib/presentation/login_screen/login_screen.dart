@@ -1,4 +1,6 @@
 import 'package:agrical_ii/core/app_export.dart';
+import 'package:agrical_ii/functions/login_functions.dart';
+import 'package:agrical_ii/presentation/forgot_password_screen.dart/forgot_password.dart';
 import 'package:agrical_ii/widgets/custom_elevated_button.dart';
 import 'package:agrical_ii/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +13,7 @@ class LoginScreen extends StatelessWidget {
 
   TextEditingController passwordController = TextEditingController();
 
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -84,24 +86,38 @@ class LoginScreen extends StatelessWidget {
                                   obscureText: true,
                                   filled: true,
                                   fillColor: appTheme.gray500),
-                              Padding(
-                                  padding: getPadding(top: 27, right: 73),
-                                  child: Text("Forgot Password?",
-                                      overflow: TextOverflow.ellipsis,
-                                      textAlign: TextAlign.left,
-                                      style:
-                                          CustomTextStyles.bodySmallGray90082)),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ForgotPasswordPage()));
+                                },
+                                child: Padding(
+                                    padding: getPadding(top: 27, right: 73),
+                                    child: Text("Forgot Password?",
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.left,
+                                        style: CustomTextStyles
+                                            .bodySmallGray90082)),
+                              ),
                               CustomElevatedButton(
-                                  width: getHorizontalSize(180),
-                                  height: getVerticalSize(32),
-                                  text: "Sign In",
-                                  margin: getMargin(top: 30, right: 29),
-                                  buttonStyle: CustomButtonStyles.fillIndigo300,
-                                  buttonTextStyle: CustomTextStyles
-                                      .titleSmallInterBluegray50,
-                                  onTap: () {
-                                    onTapSignin(context);
-                                  }),
+                                width: getHorizontalSize(180),
+                                height: getVerticalSize(32),
+                                text: "Sign In",
+                                margin: getMargin(top: 30, right: 29),
+                                buttonStyle: CustomButtonStyles.fillIndigo300,
+                                buttonTextStyle:
+                                    CustomTextStyles.titleSmallInterBluegray50,
+                                onTap: () {
+                                  signIn(
+                                    context,
+                                    emailController,
+                                    passwordController,
+                                  );
+                                },
+                              ),
                               GestureDetector(
                                   onTap: () {
                                     onTapTxtYoudonthavean(context);

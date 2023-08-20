@@ -85,16 +85,17 @@ class PredictRipeScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     CustomElevatedButton(
-                                        width: getHorizontalSize(124),
-                                        height: getVerticalSize(23),
-                                        text: "Number of fruits",
-                                        buttonStyle:
-                                            CustomButtonStyles.fillBluegray200,
-                                        buttonTextStyle:
-                                            theme.textTheme.labelLarge!,
-                                        onTap: () {
-                                          onTapNumberof(context);
-                                        }),
+                                      width: getHorizontalSize(124),
+                                      height: getVerticalSize(23),
+                                      text: "Number of fruits",
+                                      buttonStyle:
+                                          CustomButtonStyles.fillBluegray200,
+                                      buttonTextStyle:
+                                          theme.textTheme.labelLarge!,
+                                      onTap: () {
+                                        onTapNumberof(context);
+                                      },
+                                    ),
                                     Align(
                                         alignment: Alignment.centerLeft,
                                         child: Container(
@@ -120,16 +121,17 @@ class PredictRipeScreen extends StatelessWidget {
                                         margin: getMargin(top: 6, right: 61))
                                   ]))),
                       CustomElevatedButton(
-                          width: getHorizontalSize(117),
-                          height: getVerticalSize(23),
-                          text: "Spoil Time",
-                          margin: getMargin(bottom: 199),
-                          buttonStyle: CustomButtonStyles.fillOnError,
-                          buttonTextStyle: CustomTextStyles.labelLargeRed100,
-                          onTap: () {
-                            onTapSpoiltime(context);
-                          },
-                          alignment: Alignment.bottomLeft),
+                        width: getHorizontalSize(117),
+                        height: getVerticalSize(23),
+                        text: "Spoil Time",
+                        margin: getMargin(bottom: 199),
+                        buttonStyle: CustomButtonStyles.fillOnError,
+                        buttonTextStyle: CustomTextStyles.labelLargeRed100,
+                        alignment: Alignment.bottomLeft,
+                        onTap: () {
+                          onTapSpoiltime(context);
+                        },
+                      ),
                       CustomImageView(
                           svgPath: ImageConstant.imgGroup61,
                           height: getVerticalSize(322),
