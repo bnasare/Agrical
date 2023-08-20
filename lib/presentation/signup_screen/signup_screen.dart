@@ -59,17 +59,20 @@ class _SignupScreenState extends State<SignupScreen> {
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              CustomImageView(
-                                  imagePath:
-                                      ImageConstant.imgLogos4removebgpreview,
-                                  height: getVerticalSize(62),
-                                  width: getHorizontalSize(105),
-                                  alignment: Alignment.centerRight,
-                                  margin: getMargin(right: 56)),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 90),
+                                child: CustomImageView(
+                                    imagePath:
+                                        ImageConstant.imgLogos4removebgpreview,
+                                    height: getVerticalSize(62),
+                                    width: getHorizontalSize(105),
+                                    alignment: Alignment.center,
+                                    margin: getMargin(right: 56)),
+                              ),
                               Align(
-                                  alignment: Alignment.centerRight,
+                                  alignment: Alignment.center,
                                   child: Padding(
-                                      padding: getPadding(top: 13, right: 30),
+                                      padding: getPadding(top: 25, left: 30),
                                       child: Text("Akwaaba !",
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
@@ -183,14 +186,14 @@ class _SignupScreenState extends State<SignupScreen> {
                                 },
                               ),
                               Align(
-                                  alignment: Alignment.centerRight,
+                                  alignment: Alignment.center,
                                   child: GestureDetector(
                                       onTap: () {
                                         onTapTxtAlreadyhavean(context);
                                       },
                                       child: Padding(
                                           padding: getPadding(
-                                              top: 30, right: 17, bottom: 5),
+                                              top: 30, right: 7, bottom: 5),
                                           child: RichText(
                                               text: TextSpan(children: [
                                                 TextSpan(
