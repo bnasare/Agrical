@@ -1,4 +1,5 @@
 import 'package:agrical_ii/core/app_export.dart';
+import 'package:agrical_ii/presentation/profile_screen/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -15,69 +16,74 @@ class OScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ListTile(
-              leading: CircleAvatar(
+              leading: const CircleAvatar(
                 radius: 40,
+                backgroundColor: Color.fromARGB(255, 120, 147, 238),
                 child: Icon(
                   Icons.person_2,
                   size: 40,
                   color: Color.fromARGB(255, 6, 35, 58),
                 ),
-                backgroundColor: Color.fromARGB(255, 120, 147, 238),
               ),
-              title: Text(
+              title: const Text(
                 'User Profile',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    color: const Color.fromARGB(255, 21, 70, 110),
+                    color: Color.fromARGB(255, 21, 70, 110),
                     fontSize: 25),
               ),
-              subtitle: Text(
+              subtitle: const Text(
                 'Name, Email, Contact Info',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: Colors.grey,
                     fontSize: 15),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfilePage()));
+              },
             ),
             ListTile(
-              leading: CircleAvatar(
+              leading: const CircleAvatar(
                 radius: 40,
+                backgroundColor: Color.fromARGB(255, 120, 147, 238),
                 child: Icon(
                   Icons.folder,
                   color: Color.fromARGB(255, 227, 212, 44),
                   size: 40,
                 ),
-                backgroundColor: Color.fromARGB(255, 120, 147, 238),
               ),
-              title: Text(
+              title: const Text(
                 'Results',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    color: const Color.fromARGB(255, 21, 70, 110),
+                    color: Color.fromARGB(255, 21, 70, 110),
                     fontSize: 25),
               ),
               // subtitle: Text('Subtitle 2'),
               onTap: () {},
             ),
             ListTile(
-              leading: CircleAvatar(
+              leading: const CircleAvatar(
                 radius: 40,
                 backgroundColor: Color.fromARGB(255, 150, 179, 152),
                 child: Icon(
                   Icons.auto_graph_rounded,
                   size: 40,
-                  color: const Color.fromARGB(255, 121, 87, 76),
+                  color: Color.fromARGB(255, 121, 87, 76),
                 ),
               ),
-              title: Text(
+              title: const Text(
                 'Dashboard',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    color: const Color.fromARGB(255, 21, 70, 110),
+                    color: Color.fromARGB(255, 21, 70, 110),
                     fontSize: 25),
               ),
-              subtitle: Text(
+              subtitle: const Text(
                 'Monitoring, Accomplished',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
@@ -87,23 +93,23 @@ class OScreen extends StatelessWidget {
               onTap: () {},
             ),
             ListTile(
-              leading: CircleAvatar(
+              leading: const CircleAvatar(
                 radius: 40,
+                backgroundColor: Color.fromARGB(255, 150, 179, 152),
                 child: Icon(
                   Icons.camera,
                   size: 40,
                   color: Color.fromARGB(255, 120, 66, 46),
                 ),
-                backgroundColor: Color.fromARGB(255, 150, 179, 152),
               ),
-              title: Text(
+              title: const Text(
                 'Capture',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    color: const Color.fromARGB(255, 21, 70, 110),
+                    color: Color.fromARGB(255, 21, 70, 110),
                     fontSize: 25),
               ),
-              subtitle: Text(
+              subtitle: const Text(
                 'Capture, Recapture',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
@@ -115,7 +121,7 @@ class OScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: CircleAvatar(
+              leading: const CircleAvatar(
                 radius: 40,
                 backgroundColor: Color.fromARGB(255, 174, 143, 132),
                 child: Icon(
@@ -124,14 +130,14 @@ class OScreen extends StatelessWidget {
                   size: 40,
                 ),
               ),
-              title: Text(
+              title: const Text(
                 'Predictions',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    color: const Color.fromARGB(255, 21, 70, 110),
+                    color: Color.fromARGB(255, 21, 70, 110),
                     fontSize: 25),
               ),
-              subtitle: Text(
+              subtitle: const Text(
                 'Spoil Time, Ripening Time...',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
@@ -143,23 +149,23 @@ class OScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: CircleAvatar(
+              leading: const CircleAvatar(
                 radius: 40,
+                backgroundColor: Color.fromARGB(255, 56, 13, 131),
                 child: Icon(
                   Icons.settings,
                   size: 40,
                   color: Color.fromARGB(255, 255, 220, 174),
                 ),
-                backgroundColor: Color.fromARGB(255, 56, 13, 131),
               ),
-              title: Text(
+              title: const Text(
                 'Settings',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    color: const Color.fromARGB(255, 21, 70, 110),
+                    color: Color.fromARGB(255, 21, 70, 110),
                     fontSize: 25),
               ),
-              subtitle: Text(
+              subtitle: const Text(
                 'Theme, Security',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
@@ -180,14 +186,14 @@ class OScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              title: Text(
+              title: const Text(
                 'Help & Support',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    color: const Color.fromARGB(255, 21, 70, 110),
+                    color: Color.fromARGB(255, 21, 70, 110),
                     fontSize: 25),
               ),
-              subtitle: Text(
+              subtitle: const Text(
                 'IT Support, FAQs',
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
@@ -223,7 +229,7 @@ class OScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.pushNamed(context, AppRoutes.hScreen);
                 },
-                child: Text(
+                child: const Text(
                   'Home',
                   style: TextStyle(
                       color: Colors.white,

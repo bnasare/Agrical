@@ -71,9 +71,9 @@ Future<void> signUp(
   }
 }
 
-Future<void> addUserDetails(String fullName, String email) async {
+Future<void> addUserDetails(String name, String email) async {
   await FirebaseFirestore.instance.collection('users').add({
-    'Full name': fullName,
+    'name': name,
     'email': email,
     'joinedDate': FieldValue.serverTimestamp(),
   });

@@ -1,24 +1,28 @@
-import 'package:agrical_ii/auth.dart';
-import 'package:agrical_ii/presentation/app_navigation_screen/app_navigation_screen.dart';
-import 'package:agrical_ii/presentation/capture_screen/capture_screen.dart';
-import 'package:agrical_ii/presentation/dashboard_monitoring_container_screen/dashboard_monitoring_container_screen.dart';
-import 'package:agrical_ii/presentation/h_screen/h_screen.dart';
-import 'package:agrical_ii/presentation/login_screen/login_screen.dart';
-import 'package:agrical_ii/presentation/m_screen/m_screen.dart';
-import 'package:agrical_ii/presentation/o_screen/o_screen.dart';
-import 'package:agrical_ii/presentation/predict_fruits_screen/predict_fruits_screen.dart';
-import 'package:agrical_ii/presentation/predict_ripe_screen/predict_ripe_screen.dart';
-import 'package:agrical_ii/presentation/predict_spoil_screen/predict_spoil_screen.dart';
-import 'package:agrical_ii/presentation/prediction_screen/prediction_screen.dart';
-import 'package:agrical_ii/presentation/recapture_save_screen/recapture_save_screen.dart';
-import 'package:agrical_ii/presentation/settings_one_screen/settings_one_screen.dart';
-import 'package:agrical_ii/presentation/settings_screen/settings_screen.dart';
-import 'package:agrical_ii/presentation/signup_screen/signup_screen.dart';
-import 'package:agrical_ii/presentation/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../auth.dart';
+import '../presentation/app_navigation_screen/app_navigation_screen.dart';
+import '../presentation/capture_screen/capture_screen.dart';
+import '../presentation/dashboard_monitoring_container_screen/dashboard_monitoring_container_screen.dart';
+import '../presentation/h_screen/h_screen.dart';
+import '../presentation/login_screen/login_screen.dart';
+import '../presentation/m_screen/m_screen.dart';
+import '../presentation/o_screen/o_screen.dart';
+import '../presentation/predict_fruits_screen/predict_fruits_screen.dart';
+import '../presentation/predict_ripe_screen/predict_ripe_screen.dart';
+import '../presentation/predict_spoil_screen/predict_spoil_screen.dart';
+import '../presentation/prediction_screen/prediction_screen.dart';
+import '../presentation/profile_screen/profile_page.dart';
+import '../presentation/recapture_save_screen/recapture_save_screen.dart';
+import '../presentation/settings_one_screen/settings_one_screen.dart';
+import '../presentation/settings_screen/settings_screen.dart';
+import '../presentation/signup_screen/signup_screen.dart';
+import '../presentation/welcome_screen/welcome_screen.dart';
 
 class AppRoutes {
   static const String captureScreen = '/capture_screen';
+
+  static const String profilePage = '/profile';
 
   static const String authScreen = '/auth_screen';
 
@@ -67,6 +71,7 @@ class AppRoutes {
 
   static Map<String, WidgetBuilder> routes = {
     authScreen: (context) => const AuthPage(),
+    profilePage: (context) => const ProfilePage(),
     captureScreen: (context) => const CaptureScreen(),
     // splashScreen: (context) => SplashScreen(),
     welcomeScreen: (context) => const WelcomeScreen(),
