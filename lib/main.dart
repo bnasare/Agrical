@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       ),
       title: 'agrical_ii',
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.oScreen,
+      initialRoute: AppRoutes.authScreen,
       routes: AppRoutes.routes,
     );
   }

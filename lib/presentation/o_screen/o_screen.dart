@@ -1,5 +1,7 @@
 import 'package:agrical_ii/core/app_export.dart';
+import 'package:agrical_ii/presentation/login_screen/login_screen.dart';
 import 'package:agrical_ii/presentation/profile_screen/profile_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -45,26 +47,6 @@ class OScreen extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => const ProfilePage()));
               },
-            ),
-            ListTile(
-              leading: const CircleAvatar(
-                radius: 40,
-                backgroundColor: Color.fromARGB(255, 120, 147, 238),
-                child: Icon(
-                  Icons.folder,
-                  color: Color.fromARGB(255, 227, 212, 44),
-                  size: 40,
-                ),
-              ),
-              title: const Text(
-                'Results',
-                style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    color: Color.fromARGB(255, 21, 70, 110),
-                    fontSize: 25),
-              ),
-              // subtitle: Text('Subtitle 2'),
-              onTap: () {},
             ),
             ListTile(
               leading: const CircleAvatar(
@@ -225,6 +207,52 @@ class OScreen extends StatelessWidget {
                       ),
                     ),
                   )),
+              ListTile(
+                leading: const CircleAvatar(
+                  radius: 40,
+                  backgroundColor: Color.fromARGB(255, 120, 147, 238),
+                  child: Icon(
+                    Icons.folder,
+                    color: Color.fromARGB(255, 227, 212, 44),
+                    size: 40,
+                  ),
+                ),
+                title: const Text(
+                  'Results',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Color.fromARGB(255, 21, 70, 110),
+                      fontSize: 25),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: const CircleAvatar(
+                  radius: 40,
+                  backgroundColor: Color.fromARGB(255, 120, 147, 238),
+                  child: Icon(
+                    Icons.folder,
+                    color: Color.fromARGB(255, 227, 212, 44),
+                    size: 40,
+                  ),
+                ),
+                title: const Text(
+                  'Logout',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Color.fromARGB(255, 21, 70, 110),
+                      fontSize: 25),
+                ),
+                onTap: () {
+                  FirebaseAuth.instance.signOut();
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
+                    ),
+                  );
+                },
+              ),
               GestureDetector(
                 onTap: () {
                   Navigator.pushNamed(context, AppRoutes.hScreen);
