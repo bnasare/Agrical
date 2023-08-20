@@ -1,0 +1,6 @@
+﻿ID;OBJECT (PAPER);OBJECT (2014 REL.);OBJECT (2017 REL.);SUPER CATEGORY
+1;Ripe_banana;Ripe_banana;Ripe_banana;Ripe_banana
+2;Ripe_oranges;Ripe_oranges;Ripe_oranges;Ripe_oranges
+3;Ripe_tomatoes;Ripe_tomatoes;Ripe_tomatoes;Ripe_tomatoes
+4;Rotten_banana;Rotten_banana;Rotten_banana;Rotten_banana
+5;Unripe_banana;Unripe_banana;Unripe_banana;Unripe_banana
