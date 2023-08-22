@@ -1,4 +1,5 @@
 import 'package:agrical_ii/core/app_export.dart';
+import 'package:agrical_ii/presentation/camera_view/scan_controller.dart';
 import 'package:agrical_ii/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
@@ -84,6 +85,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       buttonStyle: CustomButtonStyles.fillIndigo300,
                       buttonTextStyle:
                           CustomTextStyles.titleSmallInterBluegray50,
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const ObjectDetectionScreen())),
                     )
                   ],
                 ),

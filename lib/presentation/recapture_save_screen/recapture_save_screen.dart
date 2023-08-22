@@ -1,7 +1,10 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:agrical_ii/core/app_export.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:image_picker/image_picker.dart';
 
 class RecaptureSaveScreen extends StatefulWidget {
   final File? selectedImage;
@@ -11,6 +14,31 @@ class RecaptureSaveScreen extends StatefulWidget {
   @override
   State<RecaptureSaveScreen> createState() => _RecaptureSaveScreenState();
 }
+
+Future<dynamic> uploadImageAndProcessResponse(File selectedImage) async {
+  try {
+    var url = 'http://10.0.2.2:8000/predict/';
+    var request = http.MultipartRequest('POST', Uri.parse(url));
+    request.files.add(
+      await http.MultipartFile.fromPath('file', selectedImage.path),
+    );
+
+    var response = await request.send();
+    if (response.statusCode == 200) {
+      var responseBody = await response.stream.bytesToString();
+      var data = json.decode(responseBody);
+      // Process the response data from the server (e.g., classification result)
+      print('Classification Result: $data');
+      return data['predicted_label'];
+    } else {
+      print('Error during image upload: ${response.reasonPhrase}');
+    }
+  } catch (e) {
+    print('Error: $e');
+  }
+}
+
+int result = 1;
 
 class _RecaptureSaveScreenState extends State<RecaptureSaveScreen> {
   @override
@@ -48,15 +76,32 @@ class _RecaptureSaveScreenState extends State<RecaptureSaveScreen> {
                               onTap: () {
                                 onTapImgCarbonclose(context);
                               },
-                              child: Icon(
+                              child: const Icon(
                                 Icons.close,
                                 size: 40,
                                 color: Colors.white,
                               ),
                             ),
                             GestureDetector(
-                              onTap: () {},
-                              child: Icon(
+                              onTap: () async {
+                                File selectedImage = widget.selectedImage!;
+                                final results =
+                                    await uploadImageAndProcessResponse(
+                                        selectedImage);
+                                if (!mounted) return;
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => Dialog(
+                                    child: Container(
+                                      height: 200,
+                                      width: 200,
+                                      alignment: Alignment.center,
+                                      child: Text(results.toString()),
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: const Icon(
                                 Icons.forward,
                                 size: 32,
                                 color: Colors.white,
@@ -80,7 +125,7 @@ class _RecaptureSaveScreenState extends State<RecaptureSaveScreen> {
                                 widget.selectedImage!,
                                 fit: BoxFit.cover,
                               )
-                            : SizedBox(),
+                            : const SizedBox(),
                       ),
                       Padding(
                         padding: getPadding(top: 15),
