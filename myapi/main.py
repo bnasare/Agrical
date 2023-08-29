@@ -1,12 +1,20 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+import uvicorn
 import io
 import numpy as np
 import tensorflow as tf
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # # Load the TensorFlow model
 # model_path = r'/Users/alexanderboakye/Desktop/Projects/Agrical/myapi/fruit_model.tflite'
@@ -64,3 +72,8 @@ async def predict_image(file: UploadFile = File(...)):
 
     except Exception as e:
         return {"error": str(e)}
+    
+
+    
+
+uvicorn.run(app, port=8000, host='0.0.0.0')
