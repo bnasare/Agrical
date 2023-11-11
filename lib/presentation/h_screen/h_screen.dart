@@ -41,7 +41,7 @@ class _HScreenState extends State<HScreen> {
                     options: CarouselOptions(
                       viewportFraction: 1.0,
                       autoPlay: true,
-                      autoPlayInterval: Duration(seconds: 5),
+                      autoPlayInterval: const Duration(seconds: 5),
                       onPageChanged: (index, reason) {
                         setState(() {
                           _current = index;
@@ -49,16 +49,16 @@ class _HScreenState extends State<HScreen> {
                       },
                     ),
                     items: [
-                      Container(
+                      SizedBox(
                         height: MediaQuery.of(context).size.height * 0.25,
                         child: Image.asset('assets/images/img_rectangle3.png'),
                       ),
-                      Container(
+                      SizedBox(
                         height: MediaQuery.of(context).size.height * 0.25,
                         child: Image.asset(
                             'assets/images/img_rectangle3_178x360.png'),
                       ),
-                      Container(
+                      SizedBox(
                         height: MediaQuery.of(context).size.height * 0.25,
                         child:
                             Image.asset('assets/images/img_rectangle3_1.png'),
@@ -98,17 +98,17 @@ class _HScreenState extends State<HScreen> {
                         onTap: () {
                           Navigator.pushNamed(context, AppRoutes.oScreen);
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.menu,
                           color: Colors.white,
                           size: 40,
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       CircleAvatar(
-                        child: Image.asset('assets/images/img_ellipse4.png'),
                         radius: 30,
                         backgroundColor: Colors.white,
+                        child: Image.asset('assets/images/img_ellipse4.png'),
                       )
                     ],
                   ),
@@ -126,7 +126,7 @@ class _HScreenState extends State<HScreen> {
                           SvgPicture.asset(
                             'assets/images/img_fluentweather.svg',
                           ),
-                          Text(
+                          const Text(
                             '12°C',
                             style: TextStyle(
                               color: Colors.white,
@@ -171,7 +171,7 @@ class _HScreenState extends State<HScreen> {
                             padding: const EdgeInsets.all(50),
                             child: Text(
                               _pageTexts[_current],
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontFamily: 'Inter',
                                 fontWeight: FontWeight.bold,
                                 fontSize: 30,
@@ -190,12 +190,12 @@ class _HScreenState extends State<HScreen> {
                           width: MediaQuery.of(context).size.width * 0.3,
                         ),
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Align(
                         alignment: Alignment.bottomRight,
                         child: Text(
-                          "${_pageAuthors[_current]}",
-                          style: TextStyle(
+                          _pageAuthors[_current],
+                          style: const TextStyle(
                             fontFamily: 'Mrs Saint Delafield',
                             fontSize: 40,
                             color: Colors.white,
@@ -208,7 +208,7 @@ class _HScreenState extends State<HScreen> {
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.13,
               child: Padding(

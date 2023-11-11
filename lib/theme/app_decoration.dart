@@ -19,7 +19,7 @@ class AppDecoration {
             blurRadius: getHorizontalSize(
               2,
             ),
-            offset: Offset(
+            offset: const Offset(
               0,
               4,
             ),
@@ -49,7 +49,7 @@ class AppDecoration {
             blurRadius: getHorizontalSize(
               2,
             ),
-            offset: Offset(
+            offset: const Offset(
               0,
               3,
             ),
@@ -70,7 +70,7 @@ class AppDecoration {
             blurRadius: getHorizontalSize(
               2,
             ),
-            offset: Offset(
+            offset: const Offset(
               0,
               2,
             ),
@@ -91,7 +91,7 @@ class AppDecoration {
             blurRadius: getHorizontalSize(
               2,
             ),
-            offset: Offset(
+            offset: const Offset(
               0,
               4,
             ),
@@ -112,7 +112,7 @@ class AppDecoration {
             blurRadius: getHorizontalSize(
               2,
             ),
-            offset: Offset(
+            offset: const Offset(
               0,
               3,
             ),

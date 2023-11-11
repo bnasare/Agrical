@@ -4,7 +4,7 @@ import 'package:agrical_ii/core/app_export.dart';
 import 'package:flutter/material.dart';
 
 class BaseButton extends StatelessWidget {
-  BaseButton({
+  const BaseButton({
     Key? key,
     required this.text,
     this.onTap,

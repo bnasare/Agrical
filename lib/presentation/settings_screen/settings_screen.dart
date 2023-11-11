@@ -136,7 +136,7 @@ class SettingsScreen extends StatelessWidget {
                                                   top: 18, right: 90),
                                               child: ListView.separated(
                                                   physics:
-                                                      NeverScrollableScrollPhysics(),
+                                                      const NeverScrollableScrollPhysics(),
                                                   shrinkWrap: true,
                                                   separatorBuilder:
                                                       (context, index) {

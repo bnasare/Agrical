@@ -1,5 +1,4 @@
 import 'package:agrical_ii/core/app_export.dart';
-import 'package:agrical_ii/presentation/camera_view/scan_controller.dart';
 import 'package:agrical_ii/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
@@ -77,20 +76,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       },
                     ),
                     const SizedBox(height: 20),
-                    CustomElevatedButton(
-                      width: getHorizontalSize(180),
-                      height: getVerticalSize(32),
-                      text: "Continue as guest",
-                      margin: getMargin(bottom: 5),
-                      buttonStyle: CustomButtonStyles.fillIndigo300,
-                      buttonTextStyle:
-                          CustomTextStyles.titleSmallInterBluegray50,
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const ObjectDetectionScreen())),
-                    )
+                    // CustomElevatedButton(
+                    //   width: getHorizontalSize(180),
+                    //   height: getVerticalSize(32),
+                    //   text: "Continue as guest",
+                    //   margin: getMargin(bottom: 5),
+                    //   buttonStyle: CustomButtonStyles.fillIndigo300,
+                    //   buttonTextStyle:
+                    //       CustomTextStyles.titleSmallInterBluegray50,
+                    //   onTap: () => Navigator.push(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //           builder: (context) =>
+                    //               const ObjectDetectionScreen())),
+                    // )
                   ],
                 ),
               ],

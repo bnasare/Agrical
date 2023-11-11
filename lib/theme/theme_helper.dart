@@ -8,18 +8,18 @@ String _appTheme = "primary";
 /// Helper class for managing themes and colors.
 class ThemeHelper {
   // A map of custom color themes supported by the app
-  Map<String, PrimaryColors> _supportedCustomColor = {
+  final Map<String, PrimaryColors> _supportedCustomColor = {
     'primary': PrimaryColors()
   };
 
 // A map of color schemes supported by the app
-  Map<String, ColorScheme> _supportedColorScheme = {
+  final Map<String, ColorScheme> _supportedColorScheme = {
     'primary': ColorSchemes.primaryColorScheme
   };
 
-  /// Changes the app theme to [_newTheme].
-  void changeTheme(String _newTheme) {
-    _appTheme = _newTheme;
+  /// Changes the app theme to [newTheme].
+  void changeTheme(String newTheme) {
+    _appTheme = newTheme;
   }
 
   /// Returns the primary colors for the current theme.
@@ -147,7 +147,7 @@ class ThemeHelper {
 
 /// Class containing the supported color schemes.
 class ColorSchemes {
-  static final primaryColorScheme = ColorScheme.light(
+  static const primaryColorScheme = ColorScheme.light(
     background: Color(0XFFC3EA9C),
     error: Color(0XC1080A08),
     errorContainer: Color(0X72283A98),
@@ -184,71 +184,71 @@ class ColorSchemes {
 /// Class containing custom colors for a primary theme.
 class PrimaryColors {
   // Black
-  Color get black900 => Color(0XFF000000);
+  Color get black900 => const Color(0XFF000000);
   // BlueGray
-  Color get blueGray100 => Color(0XFFD9D9D9);
-  Color get blueGray200 => Color(0XFF9DB0C1);
-  Color get blueGray400 => Color(0XFF888888);
-  Color get blueGray40072 => Color(0X727C9C7C);
-  Color get blueGray50 => Color(0XFFEEF5F4);
-  Color get blueGray700 => Color(0XFF325073);
-  Color get blueGray900 => Color(0XFF231B54);
+  Color get blueGray100 => const Color(0XFFD9D9D9);
+  Color get blueGray200 => const Color(0XFF9DB0C1);
+  Color get blueGray400 => const Color(0XFF888888);
+  Color get blueGray40072 => const Color(0X727C9C7C);
+  Color get blueGray50 => const Color(0XFFEEF5F4);
+  Color get blueGray700 => const Color(0XFF325073);
+  Color get blueGray900 => const Color(0XFF231B54);
   // BlueGraye
-  Color get blueGray9008e => Color(0X8E042142);
+  Color get blueGray9008e => const Color(0X8E042142);
   // DeepOrange
-  Color get deepOrange50 => Color(0XFFF3E7E7);
-  Color get deepOrange5001 => Color(0XFFFFE8E8);
+  Color get deepOrange50 => const Color(0XFFF3E7E7);
+  Color get deepOrange5001 => const Color(0XFFFFE8E8);
   // Gray
-  Color get gray100 => Color(0XFFF8F1F1);
-  Color get gray10001 => Color(0XFFF9F1F1);
-  Color get gray400 => Color(0XFFC1BA9D);
-  Color get gray40001 => Color(0XFFE0B4B4);
-  Color get gray50 => Color(0XFFFBF7F7);
-  Color get gray500 => Color(0XFFAD8686);
-  Color get gray50001 => Color(0XFFA89A9A);
-  Color get gray5001 => Color(0XFFFFF4F4);
-  Color get gray5044 => Color(0X44FCF9F9);
-  Color get gray600 => Color(0XFF677F76);
-  Color get gray60001 => Color(0XFF995D5D);
-  Color get gray700 => Color(0XFF695F5F);
-  Color get gray70001 => Color(0XFF6A5E5E);
-  Color get gray900 => Color(0XFF0D2725);
-  Color get gray90001 => Color(0XFF0D2625);
-  Color get gray90072 => Color(0X723C0505);
-  Color get gray90082 => Color(0X822F0606);
-  Color get gray9008201 => Color(0X82052D0C);
+  Color get gray100 => const Color(0XFFF8F1F1);
+  Color get gray10001 => const Color(0XFFF9F1F1);
+  Color get gray400 => const Color(0XFFC1BA9D);
+  Color get gray40001 => const Color(0XFFE0B4B4);
+  Color get gray50 => const Color(0XFFFBF7F7);
+  Color get gray500 => const Color(0XFFAD8686);
+  Color get gray50001 => const Color(0XFFA89A9A);
+  Color get gray5001 => const Color(0XFFFFF4F4);
+  Color get gray5044 => const Color(0X44FCF9F9);
+  Color get gray600 => const Color(0XFF677F76);
+  Color get gray60001 => const Color(0XFF995D5D);
+  Color get gray700 => const Color(0XFF695F5F);
+  Color get gray70001 => const Color(0XFF6A5E5E);
+  Color get gray900 => const Color(0XFF0D2725);
+  Color get gray90001 => const Color(0XFF0D2625);
+  Color get gray90072 => const Color(0X723C0505);
+  Color get gray90082 => const Color(0X822F0606);
+  Color get gray9008201 => const Color(0X82052D0C);
   // GrayCc
-  Color get gray100Cc => Color(0XCCFAF6F6);
+  Color get gray100Cc => const Color(0XCCFAF6F6);
   // GrayD
-  Color get gray700D3 => Color(0XD35C5A5A);
+  Color get gray700D3 => const Color(0XD35C5A5A);
   // Graye
-  Color get gray9008e => Color(0X8E2E1909);
+  Color get gray9008e => const Color(0X8E2E1909);
   // GreenAf
-  Color get green400Af => Color(0XAF5BA278);
+  Color get green400Af => const Color(0XAF5BA278);
   // Green
-  Color get green900 => Color(0XFF106B35);
+  Color get green900 => const Color(0XFF106B35);
   // Indigo
-  Color get indigo300 => Color(0XFF7C92CA);
+  Color get indigo300 => const Color(0XFF7C92CA);
   // IndigoCc
-  Color get indigo400Cc => Color(0XCC6352CE);
+  Color get indigo400Cc => const Color(0XCC6352CE);
   // IndigoD
-  Color get indigo900D3 => Color(0XD3201468);
+  Color get indigo900D3 => const Color(0XD3201468);
   // LightGreen
-  Color get lightGreen200 => Color(0XFFC3E48D);
-  Color get lightGreen400 => Color(0XFF98A670);
-  Color get lightGreen50 => Color(0XFFEEF3EA);
-  Color get lightGreen900 => Color(0XFF386218);
-  Color get lightGreen90001 => Color(0XFF386118);
+  Color get lightGreen200 => const Color(0XFFC3E48D);
+  Color get lightGreen400 => const Color(0XFF98A670);
+  Color get lightGreen50 => const Color(0XFFEEF3EA);
+  Color get lightGreen900 => const Color(0XFF386218);
+  Color get lightGreen90001 => const Color(0XFF386118);
   // Lime
-  Color get lime300 => Color(0XFFDBDD7B);
+  Color get lime300 => const Color(0XFFDBDD7B);
   // Red
-  Color get red100 => Color(0XFFF3D2D2);
-  Color get red10001 => Color(0XFFF3D1D1);
-  Color get red200 => Color(0XFFE19C9C);
-  Color get red20001 => Color(0XFFCEAC93);
-  Color get red50 => Color(0XFFFFF3F3);
+  Color get red100 => const Color(0XFFF3D2D2);
+  Color get red10001 => const Color(0XFFF3D1D1);
+  Color get red200 => const Color(0XFFE19C9C);
+  Color get red20001 => const Color(0XFFCEAC93);
+  Color get red50 => const Color(0XFFFFF3F3);
   // Yellow
-  Color get yellow50 => Color(0XFFFFFAE9);
+  Color get yellow50 => const Color(0XFFFFFAE9);
 }
 
 PrimaryColors get appTheme => ThemeHelper().themeColor();

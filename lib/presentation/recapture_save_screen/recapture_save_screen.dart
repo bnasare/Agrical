@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:agrical_ii/core/app_export.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:image_picker/image_picker.dart';
 
 class RecaptureSaveScreen extends StatefulWidget {
   final File? selectedImage;
@@ -123,7 +122,7 @@ class _RecaptureSaveScreenState extends State<RecaptureSaveScreen> {
                         child: widget.selectedImage != null
                             ? Image.file(
                                 widget.selectedImage!,
-                                fit: BoxFit.cover,
+                                fit: BoxFit.fill,
                               )
                             : const SizedBox(),
                       ),

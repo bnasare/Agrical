@@ -80,7 +80,7 @@ class DashboardMonitoringTabContainerPageState
                                   Card(
                                     clipBehavior: Clip.antiAlias,
                                     elevation: 0,
-                                    margin: EdgeInsets.all(0),
+                                    margin: const EdgeInsets.all(0),
                                     color: appTheme.gray100,
                                     shape: RoundedRectangleBorder(
                                       borderRadius:
@@ -276,11 +276,11 @@ class DashboardMonitoringTabContainerPageState
                       child: TabBar(
                         controller: tabviewController,
                         labelColor: appTheme.yellow50,
-                        labelStyle: TextStyle(),
+                        labelStyle: const TextStyle(),
                         unselectedLabelColor: appTheme.yellow50,
-                        unselectedLabelStyle: TextStyle(),
+                        unselectedLabelStyle: const TextStyle(),
                         indicatorColor: appTheme.gray40001,
-                        tabs: [
+                        tabs: const [
                           Tab(
                             child: Text(
                               "Monitoring",
@@ -305,7 +305,7 @@ class DashboardMonitoringTabContainerPageState
                 ),
                 child: TabBarView(
                   controller: tabviewController,
-                  children: [
+                  children: const [
                     DashboardMonitoringPage(),
                     DashboardAccomplishedPage(),
                   ],

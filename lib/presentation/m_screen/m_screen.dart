@@ -158,7 +158,7 @@ class MScreen extends StatelessWidget {
                                                                 style: theme
                                                                     .textTheme
                                                                     .bodyLarge)),
-                                                        Spacer(),
+                                                        const Spacer(),
                                                         Container(
                                                             height:
                                                                 getVerticalSize(
@@ -343,7 +343,7 @@ class MScreen extends StatelessWidget {
                                                                         blurRadius:
                                                                             getHorizontalSize(
                                                                                 2),
-                                                                        offset: Offset(
+                                                                        offset: const Offset(
                                                                             3,
                                                                             2))
                                                                   ])))),

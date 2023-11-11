@@ -21,7 +21,7 @@ class DashboardMonitoringContainerScreen extends StatelessWidget {
                 onGenerateRoute: (routeSetting) => PageRouteBuilder(
                     pageBuilder: (ctx, ani, ani1) =>
                         getCurrentPage(routeSetting.name!),
-                    transitionDuration: Duration(seconds: 0))),
+                    transitionDuration: const Duration(seconds: 0))),
             bottomNavigationBar:
                 CustomBottomBar(onChanged: (BottomBarEnum type) {
               Navigator.pushNamed(
@@ -47,9 +47,9 @@ class DashboardMonitoringContainerScreen extends StatelessWidget {
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
       case AppRoutes.dashboardMonitoringTabContainerPage:
-        return DashboardMonitoringTabContainerPage();
+        return const DashboardMonitoringTabContainerPage();
       default:
-        return DefaultWidget();
+        return const DefaultWidget();
     }
   }
 }
